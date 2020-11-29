@@ -12,7 +12,7 @@
             placeholder="Post a Review"></textarea>
 
             @error('body')
-                <div class="text-red-500 mt-2 text-sm">
+                 <div class="text-red-500 mt-2 text-sm">
                     {{$message}}
                 </div>
             @enderror
@@ -26,11 +26,41 @@
     @if($reviews->count())
      @foreach($reviews as $review)
      <div class="mb-4">
-     <a href="" class="font-bold">{{$review->user->name}}</a><span class="text-gray-600
-         text-sm">date</span>
+     <a href="" class="font-bold">{{$review->user->name}} </a><span class="text-gray-600
+     text-sm">{{$review->created_at->diffForHumans()}}</span>
      <p class="mb-2">{{$review->body}}</p>
+     <div>
+        <form action="" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="text-red-500">Delete</button> 
+        </form>
+     </div>
+     <div class="flex items-center">
+        @auth
+         @if(!$review->likedBy(auth()->user()))
+        
+     <form action="{{route('reviews.likes', $review)}}" method="POST" class="mr-1">
+             @csrf
+             <button type="submit" class="text-blue-500">Like</button>
+         </form>
+         @else
+
+         <form action="{{route('reviews.likes', $review)}}" method="POST" class="mr-1">
+             @csrf
+             @method('DELETE')
+            <button type="submit" class="text-blue-500">Unlike</button>
+        </form>
+       
+        @endif
+        
+        @endauth
+
+    <span>{{$review->likes->count()}} {{ Str::plural('like', $review->likes->count())}}</span>
+     </div>
      </div>
      @endforeach
+     {{$reviews->links()}}
     @else 
       <p>There are no reviews</p>
     @endif

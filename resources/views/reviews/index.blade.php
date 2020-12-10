@@ -29,13 +29,16 @@
      <a href="" class="font-bold">{{$review->user->name}} </a><span class="text-gray-600
      text-sm">{{$review->created_at->diffForHumans()}}</span>
      <p class="mb-2">{{$review->body}}</p>
+     @if(!$review->ownedBy(auth()->user()))
      <div>
-        <form action="" method="POST">
+             
+     <form action="{{route('reviews.destroy', $review)}}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="text-red-500">Delete</button> 
         </form>
      </div>
+     @endif
      <div class="flex items-center">
         @auth
          @if(!$review->likedBy(auth()->user()))

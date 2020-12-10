@@ -65,7 +65,7 @@
      @endforeach
      {{$reviews->links()}}
     @else 
-      <p>There are no reviews</p>
+      <p>No reviews</p>
     @endif
     </div>
 

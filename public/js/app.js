@@ -19330,7 +19330,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nTypeError: getProcessedPlugins is not a function\n    at /opt/lampp/htdocs/reviewapp/node_modules/tailwindcss/lib/processTailwindFeatures.js:71:83\n    at LazyResult.run (/opt/lampp/htdocs/reviewapp/node_modules/postcss/lib/lazy-result.js:288:14)\n    at LazyResult.asyncTick (/opt/lampp/htdocs/reviewapp/node_modules/postcss/lib/lazy-result.js:212:26)\n    at processing.Promise.then._this2.processed (/opt/lampp/htdocs/reviewapp/node_modules/postcss/lib/lazy-result.js:254:14)\n    at new Promise (<anonymous>)\n    at LazyResult.async (/opt/lampp/htdocs/reviewapp/node_modules/postcss/lib/lazy-result.js:250:23)\n    at LazyResult.then (/opt/lampp/htdocs/reviewapp/node_modules/postcss/lib/lazy-result.js:131:17)\n    at Promise.resolve.then.then (/opt/lampp/htdocs/reviewapp/node_modules/postcss-loader/src/index.js:142:8)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n    at runLoaders (/opt/lampp/htdocs/reviewapp/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /opt/lampp/htdocs/reviewapp/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /opt/lampp/htdocs/reviewapp/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/opt/lampp/htdocs/reviewapp/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Promise.resolve.then.then.catch (/opt/lampp/htdocs/reviewapp/node_modules/postcss-loader/src/index.js:208:9)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)");
 
 /***/ }),
 
@@ -19384,8 +19384,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\reviewapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\reviewapp\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /opt/lampp/htdocs/reviewapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /opt/lampp/htdocs/reviewapp/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })
